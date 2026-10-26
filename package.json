@@ -1,0 +1,23 @@
+{
+  "name": "prumo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prumo: organizador de tarefas com lembretes, para Android",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "android:add": "npm run build && cap add android && node scripts/patch-android.js && cap sync android",
+    "android:sync": "npm run build && cap sync android",
+    "android:apk": "cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/app": "^7.0.0",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/local-notifications": "^7.0.0",
+    "@capacitor/status-bar": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.0",
+    "esbuild": "^0.25.0"
+  }
+}
